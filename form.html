@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    form {
+        background-color: #beb3b3;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    fieldset {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 15px;
+    }
+
+    legend {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: rgb(230, 228, 228);
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    output {
+        display: block;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <form action="form.php" method="post">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+
+            <!-- Campo de texto com label -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <!-- Campo de seleção com optgroup e label -->
+            <label for="Cidade">Cidade:</label>
+            <select id="Cidade" name="Cidade">
+                <optgroup label="Recife">
+                    <option value="Recife_centro">Centro</option>
+                    <option value="Recife_zona_norte">Zona Norte</option>
+                    <option value="Recife_zona_sul">Zona Sul</option>
+                </optgroup>
+                <optgroup label="Olinda">
+                    <option value="Olinda_centro">Centro</option>
+                    <option value="Olinda_zona_norte">Zona Norte</option>
+                    <option value="Olinda_zona_sul">Zona Sul</option>
+                </optgroup>
+                <optgroup label="João Pessoa">
+                    <option value="João Pessoa_centro">Centro</option>
+                    <option value="João Pessoa_zona_norte">Zona Norte</option>
+                    <option value="João Pessoa_zona_sul">Zona Sul</option>
+                </optgroup>
+                <optgroup label="Maceió">
+                    <option value="Maceió_centro">Centro</option>
+                    <option value="Maceió_zona_norte">Zona Norte</option>
+                    <option value="Maceió_zona_sul">Zona Sul</option>
+                </optgroup>
+                <optgroup label="Natal">
+                    <option value="Natal_centro">Centro</option>
+                    <option value="Natal_zona_norte">Zona Norte</option>
+                    <option value="Natal_zona_sul">Zona Sul</option>
+                </optgroup>
+            </select>
+
+            <!-- Área de texto com label -->
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea>
+
+            <!-- Datalist para sugestões de opções -->
+            <label for="Estado_datalist">Estado:</label>
+            <input list="Estado" name="Estado_datalist" id="Estado_datalist" />
+            <datalist id="Estado">
+                <option value="Pernambuco">
+                <option value="Alagoas">
+                <option value="Paraiba">
+                <option value="Rio Grande do Norte">
+            </datalist>
+
+            <!-- Botão de envio -->
+            <button type="submit">Enviar</button>
+
+        </fieldset>
+    </form>
+
+    <!-- Campo de saída para exibir resultados -->
+    <output id="result"></output>
+
+</body>
+
+</html>
